@@ -46,6 +46,34 @@ let incerementerCopy = incrementer
 incerementerCopy()
 incrementer()
 
+struct Person {
+    var name: String
+    var age: Int
+    var favoriteIceCream: String
+}
+
+let taylor = Person(name: "Taylor Swift", age: 26, favoriteIceCream: "Chocolate")
+
+final class PersonBox {
+    var person: Person
+    
+    init(person: Person) {
+        self.person = person
+    }
+}
+
+let box = PersonBox(person: taylor)
+
+final class TestContainer {
+    var box: PersonBox!
+}
+
+let container1 = TestContainer()
+let container2 = TestContainer()
+
+container1.box = box
+container2.box = box
+
 
 
 
